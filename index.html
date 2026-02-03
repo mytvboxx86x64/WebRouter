@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script type="module">
+
+        import test from "./pages/test.js";
+
+        document.addEventListener('DOMContentLoaded', async () => {
+
+            const html = await fetch("/pages/test.html").then(r => r.text());
+            document.getElementById("app").innerHTML = html;
+            new test().init();
+
+        });
+
+    </script>
+</body>
+
+</html>
